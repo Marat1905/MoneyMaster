@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MoneyMaster.Identity", "MoneyMaster.Identity", "{87389CB7-8EA6-46DE-A775-836605346C38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MoneyMaster.Common", "MoneyMaster.Common", "{F5FFF3CB-1242-4004-956D-B7FC62714206}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MoneyMaster.Core", "MoneyMaster.Core", "{F9A87EA3-AF59-466D-94CE-2D12FBD29AB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MoneyMaster.Telegram", "MoneyMaster.Telegram", "{54EF8119-5297-4D1E-93C8-32C686D3E2E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyMaster.Common", "MoneyMaster.Common\MoneyMaster.Common\MoneyMaster.Common.csproj", "{078E2AE0-C590-4B2E-BBA4-03CDDB93D0EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyMaster.Common.Enities", "MoneyMaster.Common\MoneyMaster.Common.Enities\MoneyMaster.Common.Enities.csproj", "{A61D3008-232E-446D-A7AB-AB52BAAD1B28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyMaster.Common.Interfaces", "MoneyMaster.Common\MoneyMaster.Common.Interfaces\MoneyMaster.Common.Interfaces.csproj", "{C48DB1B6-5BCB-44CC-9EDC-DBC300AD11FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyMaster.Identity.Tests", "MoneyMaster.Identity\MoneyMaster.Identity.Tests\MoneyMaster.Identity.Tests.csproj", "{A35C3604-2083-421B-8FD4-F9DA423AD847}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{078E2AE0-C590-4B2E-BBA4-03CDDB93D0EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{078E2AE0-C590-4B2E-BBA4-03CDDB93D0EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{078E2AE0-C590-4B2E-BBA4-03CDDB93D0EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{078E2AE0-C590-4B2E-BBA4-03CDDB93D0EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A61D3008-232E-446D-A7AB-AB52BAAD1B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A61D3008-232E-446D-A7AB-AB52BAAD1B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A61D3008-232E-446D-A7AB-AB52BAAD1B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A61D3008-232E-446D-A7AB-AB52BAAD1B28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C48DB1B6-5BCB-44CC-9EDC-DBC300AD11FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C48DB1B6-5BCB-44CC-9EDC-DBC300AD11FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C48DB1B6-5BCB-44CC-9EDC-DBC300AD11FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C48DB1B6-5BCB-44CC-9EDC-DBC300AD11FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A35C3604-2083-421B-8FD4-F9DA423AD847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35C3604-2083-421B-8FD4-F9DA423AD847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35C3604-2083-421B-8FD4-F9DA423AD847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35C3604-2083-421B-8FD4-F9DA423AD847}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{078E2AE0-C590-4B2E-BBA4-03CDDB93D0EB} = {F5FFF3CB-1242-4004-956D-B7FC62714206}
+		{A61D3008-232E-446D-A7AB-AB52BAAD1B28} = {F5FFF3CB-1242-4004-956D-B7FC62714206}
+		{C48DB1B6-5BCB-44CC-9EDC-DBC300AD11FA} = {F5FFF3CB-1242-4004-956D-B7FC62714206}
+		{A35C3604-2083-421B-8FD4-F9DA423AD847} = {87389CB7-8EA6-46DE-A775-836605346C38}
+	EndGlobalSection
+EndGlobal
