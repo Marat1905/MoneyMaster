@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MoneyMaster.Common", "Money
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccountService", "AccountService", "{F9A87EA3-AF59-466D-94CE-2D12FBD29AB6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Telegram", "Telegram", "{54EF8119-5297-4D1E-93C8-32C686D3E2E0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TelegramService", "TelegramService", "{54EF8119-5297-4D1E-93C8-32C686D3E2E0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyMaster.Common", "MoneyMaster.Common\MoneyMaster.Common\MoneyMaster.Common.csproj", "{078E2AE0-C590-4B2E-BBA4-03CDDB93D0EB}"
 EndProject
@@ -37,15 +37,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{1E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{51A1BDF2-36D2-4181-8A0E-26C34E582926}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService.Tests", "MoneyMaster.IdentityService\Tests\MoneyMaster.IdentityService.Tests\IdentityService.Tests.csproj", "{F33B7FB6-6273-46DC-A3EA-D6FA77A57505}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountService.EntityFramework", "MoneyMaster.AccountService\Infrastructure\AccountService.EntityFramework\AccountService.EntityFramework.csproj", "{8D0AE897-73EF-4E9D-909E-BA3D86AAB6C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountService.Tests", "MoneyMaster.AccountService\Tests\MoneyMaster.AccountService.Tests\AccountService.Tests.csproj", "{C8E65BE0-F9E6-4142-870A-408F85E4D9FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountService.Repositories.Implementations", "MoneyMaster.AccountService\Infrastructure\AccountService.Repositories.Implementations\AccountService.Repositories.Implementations.csproj", "{F199CEC4-A886-45A6-BDAC-3046C4498A5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountService.Domain.Entities", "MoneyMaster.AccountService\Domain\MoneyMaster.AccountService.Domain.Entities\AccountService.Domain.Entities.csproj", "{7A837A4F-4395-4F3F-B054-6EEF36B7ECA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountService.Tests", "MoneyMaster.AccountService\Tests\AccountService.Tests\AccountService.Tests.csproj", "{31B3C73E-7518-4FB0-8DD9-3E3E9C75E0F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountService.EntityFramework", "MoneyMaster.AccountService\Infrastructure\MoneyMaster.AccountService.EntityFramework\AccountService.EntityFramework.csproj", "{74670CD2-C259-4925-A3AB-63DD484FF338}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountService.Domain.Entities", "MoneyMaster.AccountService\Domain\AccountService.Domain.Entities\AccountService.Domain.Entities.csproj", "{D98E2798-3062-4559-8CE8-A046A1B58CC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountService.Repositories.Implementations", "MoneyMaster.AccountService\Infrastructure\MoneyMaster.AccountService.Repositories.Implementations\AccountService.Repositories.Implementations.csproj", "{F473D4D9-CF08-4017-B2B0-CAA2D111C6E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService.Tests", "MoneyMaster.IdentityService\Tests\MoneyMaster.IdentityService.Tests\IdentityService.Tests.csproj", "{AFCDD1AF-72AC-42F3-9081-BC0F2166FDB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,26 +65,26 @@ Global
 		{C48DB1B6-5BCB-44CC-9EDC-DBC300AD11FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C48DB1B6-5BCB-44CC-9EDC-DBC300AD11FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C48DB1B6-5BCB-44CC-9EDC-DBC300AD11FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F33B7FB6-6273-46DC-A3EA-D6FA77A57505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F33B7FB6-6273-46DC-A3EA-D6FA77A57505}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F33B7FB6-6273-46DC-A3EA-D6FA77A57505}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F33B7FB6-6273-46DC-A3EA-D6FA77A57505}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C8E65BE0-F9E6-4142-870A-408F85E4D9FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C8E65BE0-F9E6-4142-870A-408F85E4D9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C8E65BE0-F9E6-4142-870A-408F85E4D9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C8E65BE0-F9E6-4142-870A-408F85E4D9FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A837A4F-4395-4F3F-B054-6EEF36B7ECA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A837A4F-4395-4F3F-B054-6EEF36B7ECA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A837A4F-4395-4F3F-B054-6EEF36B7ECA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A837A4F-4395-4F3F-B054-6EEF36B7ECA0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{74670CD2-C259-4925-A3AB-63DD484FF338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74670CD2-C259-4925-A3AB-63DD484FF338}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74670CD2-C259-4925-A3AB-63DD484FF338}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74670CD2-C259-4925-A3AB-63DD484FF338}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F473D4D9-CF08-4017-B2B0-CAA2D111C6E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F473D4D9-CF08-4017-B2B0-CAA2D111C6E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F473D4D9-CF08-4017-B2B0-CAA2D111C6E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F473D4D9-CF08-4017-B2B0-CAA2D111C6E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D0AE897-73EF-4E9D-909E-BA3D86AAB6C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D0AE897-73EF-4E9D-909E-BA3D86AAB6C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D0AE897-73EF-4E9D-909E-BA3D86AAB6C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D0AE897-73EF-4E9D-909E-BA3D86AAB6C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F199CEC4-A886-45A6-BDAC-3046C4498A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F199CEC4-A886-45A6-BDAC-3046C4498A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F199CEC4-A886-45A6-BDAC-3046C4498A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F199CEC4-A886-45A6-BDAC-3046C4498A5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B3C73E-7518-4FB0-8DD9-3E3E9C75E0F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B3C73E-7518-4FB0-8DD9-3E3E9C75E0F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B3C73E-7518-4FB0-8DD9-3E3E9C75E0F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B3C73E-7518-4FB0-8DD9-3E3E9C75E0F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D98E2798-3062-4559-8CE8-A046A1B58CC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D98E2798-3062-4559-8CE8-A046A1B58CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D98E2798-3062-4559-8CE8-A046A1B58CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D98E2798-3062-4559-8CE8-A046A1B58CC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFCDD1AF-72AC-42F3-9081-BC0F2166FDB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFCDD1AF-72AC-42F3-9081-BC0F2166FDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFCDD1AF-72AC-42F3-9081-BC0F2166FDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFCDD1AF-72AC-42F3-9081-BC0F2166FDB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,10 +103,10 @@ Global
 		{FA443D66-64FC-4DD5-887F-90E9BFB69B99} = {87389CB7-8EA6-46DE-A775-836605346C38}
 		{1EBC02AF-D150-4793-A553-962C1860F87A} = {87389CB7-8EA6-46DE-A775-836605346C38}
 		{51A1BDF2-36D2-4181-8A0E-26C34E582926} = {87389CB7-8EA6-46DE-A775-836605346C38}
-		{F33B7FB6-6273-46DC-A3EA-D6FA77A57505} = {51A1BDF2-36D2-4181-8A0E-26C34E582926}
-		{C8E65BE0-F9E6-4142-870A-408F85E4D9FC} = {897AE40E-F5C2-4EDF-BB32-AE9C251EAEB9}
-		{7A837A4F-4395-4F3F-B054-6EEF36B7ECA0} = {41903659-E666-421F-9AB0-9775989EB989}
-		{74670CD2-C259-4925-A3AB-63DD484FF338} = {72F82BCE-8009-403D-80C1-D4FD11B6FE62}
-		{F473D4D9-CF08-4017-B2B0-CAA2D111C6E8} = {72F82BCE-8009-403D-80C1-D4FD11B6FE62}
+		{8D0AE897-73EF-4E9D-909E-BA3D86AAB6C1} = {72F82BCE-8009-403D-80C1-D4FD11B6FE62}
+		{F199CEC4-A886-45A6-BDAC-3046C4498A5C} = {72F82BCE-8009-403D-80C1-D4FD11B6FE62}
+		{31B3C73E-7518-4FB0-8DD9-3E3E9C75E0F3} = {897AE40E-F5C2-4EDF-BB32-AE9C251EAEB9}
+		{D98E2798-3062-4559-8CE8-A046A1B58CC2} = {41903659-E666-421F-9AB0-9775989EB989}
+		{AFCDD1AF-72AC-42F3-9081-BC0F2166FDB0} = {51A1BDF2-36D2-4181-8A0E-26C34E582926}
 	EndGlobalSection
 EndGlobal
