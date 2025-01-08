@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>4ed135e3-17c6-4157-9889-9913a285e8a8</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\AccountService.EntityFramework\AccountService.EntityFramework.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\AccountService.Repositories.Implementations\AccountService.Repositories.Implementations.csproj" />
+    <ProjectReference Include="..\..\Services\AccountService.Services.Abstractions\AccountService.Services.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Services\AccountService.Services.Implementations\AccountService.Services.Implementations.csproj" />
+  </ItemGroup>
+
+</Project>
