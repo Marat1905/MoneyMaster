@@ -1,6 +1,7 @@
 using AccountService.EntityFramework;
 using AccountService.Repositories.Implementations.Service;
 using AccountService.Services.Implementations.Service;
+using AccountService.WebAPI.Data;
 
 namespace AccountService.WebAPI
 {
@@ -22,7 +23,7 @@ namespace AccountService.WebAPI
                   .AddServices()
 
                   ;
-           // builder.Services.AddTransient<DbInitializer>().BuildServiceProvider().CreateAsyncScope().ServiceProvider.GetRequiredService<DbInitializer>().InitializeAsync().Wait();
+            builder.Services.AddTransient<DbInitializer>().BuildServiceProvider().CreateAsyncScope().ServiceProvider.GetRequiredService<DbInitializer>().InitializeAsync().Wait();
 
 
 
