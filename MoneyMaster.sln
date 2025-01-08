@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MoneyMaster.Telegram", "Mon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyMaster.Common", "MoneyMaster.Common\MoneyMaster.Common\MoneyMaster.Common.csproj", "{078E2AE0-C590-4B2E-BBA4-03CDDB93D0EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyMaster.Common.Enities", "MoneyMaster.Common\MoneyMaster.Common.Enities\MoneyMaster.Common.Enities.csproj", "{A61D3008-232E-446D-A7AB-AB52BAAD1B28}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyMaster.Common.Entities", "MoneyMaster.Common\MoneyMaster.Common.Enities\MoneyMaster.Common.Entities.csproj", "{A61D3008-232E-446D-A7AB-AB52BAAD1B28}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyMaster.Common.Interfaces", "MoneyMaster.Common\MoneyMaster.Common.Interfaces\MoneyMaster.Common.Interfaces.csproj", "{C48DB1B6-5BCB-44CC-9EDC-DBC300AD11FA}"
 EndProject
