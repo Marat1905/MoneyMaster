@@ -1,4 +1,4 @@
-﻿namespace MoneyMaster.AccountService.Tests
+﻿namespace AccountService.Tests
 {
     public class UnitTest1
     {
