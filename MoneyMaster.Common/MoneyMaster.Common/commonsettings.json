@@ -10,7 +10,7 @@
     "AditionalOptions": {
       "ISSUER": "MyAuthServer",
       "AUDIENCE": "MyAuthClient",
-      "KEY": "mysupersecret_secretkey!123",
+      "KEY": "mysupersecret_secretkey!1234567890",
       "LIFETIME": "525600"
     }
   }

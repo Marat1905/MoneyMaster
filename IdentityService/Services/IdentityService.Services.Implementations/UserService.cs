@@ -37,6 +37,15 @@ namespace IdentityService.Services.Implementations
             return item;
         }
 
+        public async Task<UserJwtTokenDto?> AuthorizeUser(UserAuthorizeDto user)
+        {
+            if (user == null)
+                return null;
+            var entity = await _userRepository.AuthorizeUserAsync(user.UserName, user.PasswordHash);
+            if (entity == null) return null;
+            return new UserJwtTokenDto() { Id = entity.Id, UserName = entity.UserName,Email=entity.Email };
+        }
+
         public async Task<ICollection<UserDto>> GetAllAsync()
         {
             ICollection<User> entities = _userRepository.GetAll().ToList();

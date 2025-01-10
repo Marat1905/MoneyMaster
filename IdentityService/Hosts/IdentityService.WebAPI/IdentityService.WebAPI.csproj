@@ -17,6 +17,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <ProjectReference Include="..\..\..\MoneyMaster.Common\MoneyMaster.Common\MoneyMaster.Common.csproj" />
     <ProjectReference Include="..\..\Infrastructure\IdentityService.Infrastructure.EntityFramework\IdentityService.Infrastructure.EntityFramework.csproj" />
     <ProjectReference Include="..\..\Infrastructure\IdentityService.Infrastructure.Repositories.Implementations\IdentityService.Infrastructure.Repositories.Implementations.csproj" />
     <ProjectReference Include="..\..\Services\IdentityService.Services.Abstractions\IdentityService.Services.Abstractions.csproj" />

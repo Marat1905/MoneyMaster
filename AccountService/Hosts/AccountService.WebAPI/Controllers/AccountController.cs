@@ -1,5 +1,6 @@
 ﻿using AccountService.Services.Abstractions;
 using AccountService.Services.Contracts.Account;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AccountService.WebAPI.Controllers
@@ -8,6 +9,7 @@ namespace AccountService.WebAPI.Controllers
     /// Контроллер аккаунта
     /// </summary>
     [ApiController]
+    [Authorize]
     [Route("api/[controller]/[action]")]
     public class AccountController : ControllerBase
     {

@@ -31,6 +31,13 @@ namespace IdentityService.Services.Abstractions
         /// <returns>Добавленная в репозиторий сущность</returns>
         Task<CreatingUserDto> AddAsync(CreatingUserDto item, CancellationToken Cancel = default);
 
+        /// <summary>
+        /// Авторизация пользователя по имени и паролю
+        /// </summary>
+        /// <param name="user">user</param>
+        /// <returns></returns>
+        public Task<UserJwtTokenDto?> AuthorizeUser(UserAuthorizeDto user);
+
 
     }
 }

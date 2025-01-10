@@ -1,6 +1,7 @@
 using IdentityService.Infrastructure.EntityFramework;
 using IdentityService.Infrastructure.Repositories.Implementations.Service;
 using IdentityService.Services.Implementations.Service;
+using MoneyMaster.Common.Extensions;
 using IdentityService.WebAPI.Data;
 
 namespace IdentityService.WebAPI
@@ -41,6 +42,9 @@ namespace IdentityService.WebAPI
             //    opt.SupportNonNullableReferenceTypes();
             //});
 
+            //ƒобавл€ем авторизацию
+            builder.Services.AddCustomJWTAuthentification();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -56,7 +60,9 @@ namespace IdentityService.WebAPI
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseAuthentication();   // добавление middleware аутентификации 
+
+            app.UseAuthorization();   // добавление middleware авторизации 
 
 
             app.MapControllers();

@@ -2,6 +2,7 @@ using AccountService.EntityFramework;
 using AccountService.Repositories.Implementations.Service;
 using AccountService.Services.Implementations.Service;
 using AccountService.WebAPI.Data;
+using MoneyMaster.Common.Extensions;
 
 namespace AccountService.WebAPI
 {
@@ -41,6 +42,9 @@ namespace AccountService.WebAPI
             //    opt.SupportNonNullableReferenceTypes();
             //});
 
+            //ƒобавл€ем авторизацию
+            builder.Services.AddCustomJWTAuthentification();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -53,7 +57,9 @@ namespace AccountService.WebAPI
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseAuthentication();   // добавление middleware аутентификации 
+
+            app.UseAuthorization();   // добавление middleware авторизации 
 
 
             app.MapControllers();

@@ -1,7 +1,11 @@
 ﻿using AutoMapper;
 using IdentityService.Services.Abstractions;
 using IdentityService.Services.Contracts.User;
+using IdentityService.WebAPI.Infrastructure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MoneyMaster.Common.Options;
+using System.Security.Claims;
 
 namespace IdentityService.WebAPI.Controllers
 {
@@ -10,17 +14,20 @@ namespace IdentityService.WebAPI.Controllers
     /// </summary>
     [ApiController]
     [Route("api/[controller]/[action]")]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
+        private readonly AuthOptions _authOptions;
 
-        public UserController(ILogger<UserController> logger, IUserService userService, IMapper mapper)
+        public UserController(ILogger<UserController> logger, IUserService userService, IMapper mapper, AuthOptions authOptions)
         {
             _logger = logger;
             _userService = userService;
             _mapper = mapper;
+            _authOptions = authOptions;
         }
 
         /// <summary>
@@ -78,6 +85,53 @@ namespace IdentityService.WebAPI.Controllers
             var users = await _userService.GetAllAsync();
 
             return StatusCode(StatusCodes.Status200OK, _mapper.Map<ICollection<UserDto>>(users));
+        }
+
+        /// <summary>
+        /// Авторизованный пользователь, без каких-либо ограничений
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [HttpPost("authorize")]
+        [AllowAnonymous]
+        public async Task<ActionResult<string>> Token([FromBody] UserAuthorizeDto user)
+        {
+            var identity = await GetIdentity(user);
+            if (identity == null)
+            {
+                return BadRequest(new { errorText = "Неверное имя пользователя или пароль." });
+            }
+
+            var encodedJwt = TokenProducer.GetJWTToken(identity.Claims, _authOptions);
+
+            var response = new
+            {
+                token = encodedJwt,
+                username = identity.Name
+            };
+
+            return Ok(response);
+        }
+
+        private async Task<ClaimsIdentity> GetIdentity(UserAuthorizeDto user)
+        {
+            var person = await _userService.AuthorizeUser(user);
+            if (person != null)
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimsIdentity.DefaultNameClaimType, person.UserName),
+                    new Claim("ID", person.Id.ToString()),
+                    new Claim("EMail",person.Email)
+                };
+                ClaimsIdentity claimsIdentity =
+                new ClaimsIdentity(claims, "Token", ClaimsIdentity.DefaultNameClaimType,
+                    ClaimsIdentity.DefaultRoleClaimType);
+                return claimsIdentity;
+            }
+
+            // если пользователя не найдено
+            return null;
         }
     }
 }

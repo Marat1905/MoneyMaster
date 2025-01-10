@@ -1,6 +1,7 @@
 ﻿using IdentityService.Domain.Entities;
 using IdentityService.Infrastructure.EntityFramework.Context;
 using Microsoft.EntityFrameworkCore;
+using MoneyMaster.Common.Extensions;
 
 namespace IdentityService.WebAPI.Data
 {
@@ -29,9 +30,9 @@ namespace IdentityService.WebAPI.Data
            
 
 
-            User user1 = new User() { UserName = "Петр", Email = "Peter@Gmail.com", PasswordHash = "GGGG", CreateAt = DateTime.Now };
-            User user2 = new User() { UserName = "Иван", Email = "Ivan@Gmail.com", PasswordHash = "Ivan", CreateAt = DateTime.Now };
-            User user3 = new User() { UserName = "Вася", Email = "Basia@Gmail.com", PasswordHash = "Basia", CreateAt = DateTime.Now };
+            User user1 = new User() { UserName = "Петр", Email = "Peter@Gmail.com", PasswordHash = UserHelper.GenerateHash("GGGG"), CreateAt = DateTime.Now };
+            User user2 = new User() { UserName = "Иван", Email = "Ivan@Gmail.com", PasswordHash = UserHelper.GenerateHash("Ivan"), CreateAt = DateTime.Now };
+            User user3 = new User() { UserName = "Вася", Email = "Basia@Gmail.com", PasswordHash = UserHelper.GenerateHash("Basia"), CreateAt = DateTime.Now };
             UserSetting userSetting1 = new UserSetting() { Language = "ru" };
             UserSetting userSetting2 = new UserSetting() { Language = "eng" };
             UserSetting userSetting3 = new UserSetting() { Language = "ru" };

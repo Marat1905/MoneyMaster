@@ -13,5 +13,13 @@ namespace IdentityService.Services.Repositories.Abstractions
         /// <param name="Cancel">Признак отмены асинхронной операции</param>
         /// <returns>Истина, если указанная сущность существует в репозитории</returns>
         Task<bool> Exist(User item, CancellationToken Cancel = default);
+
+        /// <summary>
+        /// Авторизация пользователя по имени и паролю
+        /// </summary>
+        /// <param name="userName">Имя пользователя</param>
+        /// <param name="password">Пароль</param>
+        /// <returns></returns>
+        public Task<User?> AuthorizeUserAsync(string userName, string password);
     }
 }
