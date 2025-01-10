@@ -42,10 +42,11 @@ namespace IdentityService.WebAPI
             //    opt.SupportNonNullableReferenceTypes();
             //});
 
-            //Добавляем авторизацию
+            //Р”РѕР±Р°РІР»СЏРµРј Р°РІС‚РѕСЂРёР·Р°С†РёСЋ
             builder.Services.AddCustomJWTAuthentification();
 
             var app = builder.Build();
+
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -60,9 +61,9 @@ namespace IdentityService.WebAPI
 
             app.UseHttpsRedirection();
 
-            app.UseAuthentication();   // добавление middleware аутентификации 
+            app.UseAuthentication();   // РґРѕР±Р°РІР»РµРЅРёРµ middleware Р°СѓС‚РµРЅС‚РёС„РёРєР°С†РёРё 
 
-            app.UseAuthorization();   // добавление middleware авторизации 
+            app.UseAuthorization();   // РґРѕР±Р°РІР»РµРЅРёРµ middleware Р°РІС‚РѕСЂРёР·Р°С†РёРё 
 
 
             app.MapControllers();

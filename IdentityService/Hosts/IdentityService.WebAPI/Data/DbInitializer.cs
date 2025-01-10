@@ -20,6 +20,7 @@ namespace IdentityService.WebAPI.Data
             await _db.Database.EnsureDeletedAsync().ConfigureAwait(false);
             //Прекращаем отслеживание всех отслеживаемых в настоящее время сущностей.
             //_db.ChangeTracker.Clear();
+            //await _db.Database.EnsureCreatedAsync().ConfigureAwait(false);
             //Мигрируем БД
             await _db.Database.MigrateAsync().ConfigureAwait(false);
             await InitialDB();
