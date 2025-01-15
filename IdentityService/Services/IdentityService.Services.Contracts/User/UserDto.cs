@@ -25,6 +25,12 @@ namespace IdentityService.Services.Contracts.User
 
         /// <summary>Время</summary>
         public DateTime CreateAt { get; set; }
+
+        /// <summary>Имя пользователя в телеграмм</summary>
+        public string? TelegramUserName { get; set; }
+
+        /// <summary>Роли пользователя</summary>
+        public required string Role { get; set; }
     }
 
     /// <summary>DTO пользователя</summary>

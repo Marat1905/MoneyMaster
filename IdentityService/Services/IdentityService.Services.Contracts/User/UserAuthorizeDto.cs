@@ -1,4 +1,6 @@
-﻿namespace IdentityService.Services.Contracts.User
+﻿// Ignore Spelling: Dto
+
+namespace IdentityService.Services.Contracts.User
 {
     /// <summary>DTO авторизации пользователя</summary>
     public class UserAuthorizeDto

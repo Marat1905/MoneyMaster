@@ -1,15 +1,17 @@
-﻿namespace IdentityService.Services.Contracts.User
+﻿// Ignore Spelling: Jwt Dto
+
+namespace IdentityService.Services.Contracts.User
 {
     public class UserJwtTokenDto
     {
         public Guid Id { get; set; }
 
-        public string UserName { get; set; }
+        public required string UserName { get; set; }
 
-        //public string Role { get; set; } = "User";
+        public required string Role { get; set; }
 
-        //public string TelegramUserName { get; set; }
+        public string? TelegramUserName { get; set; }
 
-        public string Email { get; set; }
+        public required string Email { get; set; }
     }
 }

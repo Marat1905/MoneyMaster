@@ -16,6 +16,12 @@ namespace IdentityService.Services.Contracts.User
         /// <summary>Пароль</summary>
         public required string PasswordHash { get; set; }
 
+        /// <summary>Имя пользователя в телеграмм</summary>
+        public string? TelegramUserName { get; set; }
+
+        /// <summary>Роли пользователя</summary>
+        public string Role { get; set; } = "User";
+
         /// <summary>Настройки пользователя </summary>
         public UserSettingDto? UserSetting { get; set; } = new UserSettingDto()
         {

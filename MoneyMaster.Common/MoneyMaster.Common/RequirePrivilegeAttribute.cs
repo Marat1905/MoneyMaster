@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace MoneyMaster.Common
 {
@@ -7,7 +8,7 @@ namespace MoneyMaster.Common
     ///  В базу данных пишем в поле Role соответствующую роль в текстовом формате
     /// </summary>
     [Flags]
-    public enum Priviliges
+    public enum Privileges
     {
         System = 0,
         Administrator = 1,
@@ -19,11 +20,16 @@ namespace MoneyMaster.Common
     /// Атрибут позволяющий разграничить доступ по нескольким ролям, агрегатор атрибута Authorize
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
-    public class RequirePrivelegeAttribute : AuthorizeAttribute
+    public class RequirePrivilegeAttribute : AuthorizeAttribute
     {
-        public RequirePrivelegeAttribute(params Priviliges[] priviliges)
+        public RequirePrivilegeAttribute(params Privileges[] priviliges)
         {
             Roles = String.Join(",", priviliges);
+
+            if (priviliges.Any(r => r.GetType().BaseType != typeof(Enum)))
+                throw new ArgumentException("roles");
+
+            this.Roles = string.Join(",", priviliges.Select(r => Enum.GetName(r.GetType(), r)));
         }
 
     }

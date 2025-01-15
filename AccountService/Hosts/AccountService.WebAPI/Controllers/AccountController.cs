@@ -2,6 +2,7 @@
 using AccountService.Services.Contracts.Account;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MoneyMaster.Common;
 
 namespace AccountService.WebAPI.Controllers
 {
@@ -52,6 +53,7 @@ namespace AccountService.WebAPI.Controllers
         /// <response code="200">Получение списка аккаунтов</response>
         [HttpGet]
         [ProducesResponseType<ICollection<AccountDto>>(StatusCodes.Status200OK)]
+        [RequirePrivilege(Privileges.Administrator, Privileges.System)]
         public async Task<IActionResult> GetAll()
         {
             var accounts = await _accountService.GetAllAsync();

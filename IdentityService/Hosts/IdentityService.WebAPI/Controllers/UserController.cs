@@ -4,6 +4,7 @@ using IdentityService.Services.Contracts.User;
 using IdentityService.WebAPI.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MoneyMaster.Common;
 using MoneyMaster.Common.Options;
 using System.Security.Claims;
 
@@ -41,6 +42,7 @@ namespace IdentityService.WebAPI.Controllers
         [Route("{id}")]
         [ProducesResponseType<UserDto>(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize]
         public async Task<IActionResult> Get([FromRoute] Guid id)
         {
             var user = await _userService.GetByIdAsync(id);
@@ -63,6 +65,7 @@ namespace IdentityService.WebAPI.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
+        [Authorize]
         public async Task<IActionResult> Create([FromBody] CreatingUserDto model)
         {
             var result = await _userService.AddAsync(model);
@@ -80,6 +83,7 @@ namespace IdentityService.WebAPI.Controllers
         /// <response code="200">Получение списка пользователей</response>
         [HttpGet]
         [ProducesResponseType<ICollection<UserDto>>(StatusCodes.Status200OK)]
+        [RequirePrivilege(Privileges.Administrator, Privileges.System)]
         public async Task<IActionResult> GetAll()
         {
             var users = await _userService.GetAllAsync();
@@ -121,7 +125,10 @@ namespace IdentityService.WebAPI.Controllers
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimsIdentity.DefaultNameClaimType, person.UserName),
+                    new Claim(ClaimsIdentity.DefaultRoleClaimType, person.Role),
                     new Claim("ID", person.Id.ToString()),
+                    new Claim("NameTelegram", person.TelegramUserName?.ToString()?? ""),
+                    new Claim("Role", person.Role),
                     new Claim("EMail",person.Email)
                 };
                 ClaimsIdentity claimsIdentity =

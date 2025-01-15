@@ -19,5 +19,14 @@ namespace IdentityService.Domain.Entities
 
         /// <summary>Мягкое удаление</summary>
         public bool IsDelete { get; set; }
+
+        /// <summary>Имя пользователя в телеграмм</summary>
+        public string? TelegramUserName { get; set; }
+
+        /// <summary>Подтвержден ли аккаунт в телеграмм</summary>
+        public bool TelegramUserNameConfirmed { get; set; }
+
+        /// <summary>Роли пользователя</summary>
+        public required string Role { get; set; }
     }
 }
